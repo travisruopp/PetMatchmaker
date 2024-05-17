@@ -1,0 +1,311 @@
+* {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+/* color scheme*/
+:root {
+  --color1: #f4aaa4;
+  --color2: #ec9f80;
+  --color3: #c49792;
+  --color4: #a5092d;
+  --color5: #79aed3;
+  --color6: #31393b;
+  --color7: rgb(162, 159, 159);
+}
+
+/** nav bar for main page- same as all pages*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+.navbar1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: white;
+}
+.navbar1 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: white;
+}
+.navbar1 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1em;
+  padding: 0;
+}
+.navbar1 a {
+  padding: 0.5em 0.8em;
+  margin: 0.2em 0;
+  display: block;
+  color: var(--color6);
+  position: relative;
+  text-decoration: none;
+}
+.navbar1 a:before,
+.navbar1 a:after {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  content: "";
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.navbar1 a:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid var(--color4);
+  border-top: 3px solid var(--color4);
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+.navbar1 a:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid var(--color4);
+  border-bottom: 3px solid var(--color4);
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+.navbar1 a:hover,
+.navbar1 .current a {
+  color: #0e0d0d;
+}
+.navbar1a:hover:before,
+.navbar1 .current a:before,
+.navbar1 a:hover:after,
+.navbar1.current a:after {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+}
+
+/* background image and login panel */
+.bg-img {
+  background-image: url("/images/petpaws.jpeg");
+  background-size: contain;
+  height: 70vh;
+  width: 99vw;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.loggedbox{
+  background-color: var(--color1);
+  text-align: center;
+  border: 2px solid black;
+  width: 175px;
+}
+
+.logbtn{
+  background-color: var(--color4);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 175px;
+  opacity: 0.9;
+}
+.header-container{
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-rows: auto;
+  gap: 10px;
+  
+}
+/* Add styles to the form container */
+form.container{
+  max-height: 200px;
+}
+
+/* spacing and style for the main content */
+.main-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    "left right"
+    "paragraph paragraph"
+    "leftB rightB"
+    "footer footer";
+}
+/** this is for the login box on the index.html page */
+.container1 {
+  grid-area: right;
+  position: static;
+  margin: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 75px;
+  background-color: white;
+}
+
+/** this is for the login box on the index.html page */
+input[type="text"],
+input[type="password"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  box-sizing: border-box;
+  background-color: #ddd;
+  outline: none;
+}
+/*all buttons the same color*/
+button{
+  background-color: #a5092d;
+ }
+ 
+/* Set a style for the submit button */
+.btn {
+  background-color: var(--color4);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  opacity: 1;
+  box-shadow: #31393b;
+}
+
+.btn:hover{
+  background-color: #79aed3;
+  width: 100%;
+}
+
+/*css for the Start Quiz button*/
+button.startbtn{
+  font-size: medium;
+  grid-area: leftB;
+  margin: 2em;
+  margin-left: 35%;
+  margin-right: 50%;
+  width: 175px;
+  height: 100px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: #31393b;
+  box-sizing: border-box;
+}
+
+/*style for the register new user button*/
+button.regbtn{
+  font-size: medium;
+  grid-area: rightB;
+  margin: 2em;
+  margin-left: 50%;
+  margin-right: 50%;
+  width: 175px;
+  height: 100px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: #31393b;
+  box-sizing: border-box;
+  
+ 
+}
+/*style for the hover on the buttons*/
+button:hover {
+ background-color: #79aed3;
+  border: none;
+  cursor: pointer;
+  width: 175px;
+  opacity: 0.9;
+  box-shadow: #31393b;
+}
+/*css for the main body. spacing*/
+body {
+  background-color: var(--color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 50vh;
+}
+/*styling for the h1 header*/
+header h1 {
+  color: var(--color4);
+  text-align: center;
+  margin: 0;
+  padding-left: 20%;
+}
+
+h1{
+  font-size: 4em;
+
+  
+}
+
+header{
+  display: flex;
+  justify-content: center;
+}
+
+div.header-container{
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+/*footer styling*/
+.footer {
+  position: fixed;
+  grid-area: footer;
+  color: var(--color6);
+  padding: 10px; /* Add some padding */
+  width: 100%; /* Full width */
+  bottom: 0;
+}
+
+/*back home button styling*/
+.backhome{
+  margin-left: 100px;
+  background-color: rgb(221, 161, 139);
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  
+}
+.backhome:hover{
+  margin-left: 100px;
+  background-color: rgb(221, 161, 139);
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  
+}
+/* css style for the paragraph */
+
+p.indextext{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  margin-top: 5.5%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+  background-color: white;
+  opacity:0.6;
+}
+@media(max-width: 376px) {
+  main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      font-size: smaller;
+     
+  }
+}

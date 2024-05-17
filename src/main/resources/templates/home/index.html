@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <title>PetMatchMaker</title>
+
+
+</head>
+  
+  <header>
+    <div class="bg-img">
+      <div class="header-container">
+      <h1>Pet Match Maker</h1>
+        <div class="loggedbox" th:if="${isLoggedIn}">
+        <p>Welcome</p>
+        <p th:text="${userId}"></p>
+        <a th:href="@{/logout}"><button class="logbtn">Log Out</button></a>
+          </div>
+      <div class="loggedbox" th:unless="${isLoggedIn}">
+        <p>Logged Out</p>
+      </div>
+    
+    </div>
+      <div class="container">
+      <nav class="menu-content">
+        <ul class="navbar1">
+          <li><a href="/">Home</a></li>
+          <li><a th:href="@{/quiz}">Quiz</a></li>
+          <li><a href="/resource">Resources</a></li>
+          <li><a href="/aboutus">About us</a></li>
+          <li><a href="/autologin">Auto Login</a></li>
+          <li><a href="/virtualpet">Virtual Pet</a></li>
+        </ul>
+      </nav>
+    </div>
+      <div class="main-content">
+      <form action="#" class="container1" th:action="@{/login}" th:object="${loginUser}" method="post" th:unless="${isLoggedIn}">
+        <h1>Login</h1>
+        <input type="hidden" th:field="*{id}" />
+        <label><b>User Login</b></label>
+        <input type="text" placeholder="Username" th:field="*{userId}">
+        <label>Password</label>
+        <input type="text" placeholder="Password" th:field="*{password}">
+
+        <button type="submit" class="btn">Login</button>
+              
+          <!-- need out add a log out button -->
+          <!--log out function-->
+
+      </form>
+      <p class="indextext"> <br> 
+        <br>
+        <br>
+        Welcome to our Pet Matchmaking Quiz, where we strive to pair you with your perfect furry friend!
+        <br>
+         This quiz is designed to delve into your lifestyle, preferences, and personality to find the ideal 
+         <br>
+         companion who will bring joy, companionship, and love into your life.
+        <br>
+        Through a series of thoughtfully crafted questions, we'll explore your 
+        <br>
+        activity level, living situation, grooming preferences, and more. 
+        <br>
+        Whether you're seeking a playful pup to join you on outdoor adventures, 
+        <br>
+        a cuddly cat to keep you company during cozy nights in, 
+        <br>
+        or a low-maintenance pet to fit your busy lifestyle, 
+        <br>
+        we're here to help you find the perfect match.
+        <br>
+        <br>
+        <br>
+        At the end of the quiz, you'll receive personalized recommendations based on your answers, 
+        <br>
+        guiding you towards the pet that best aligns with your lifestyle and preferences. 
+        <br>
+        So let's get started on this exciting journey to finding your furry soulmate!
+      </p>
+      <!-- <button class="regbtn">Register new user</button> -->
+
+      <a class="regbtn" th:unless="${isLoggedIn}" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
+      <a class="startbtn" th:href="@{/quiz}"><button class="startbtn">Start Your Quiz!</button></a> 
+      
+    </div>
+    
+    
+  </header>
+
+  <body>
+
+      <div class="body">
+       
+      </div>
+      
+    </div>
+   
+  </body>
+  
+  <div th:replace="./fragments/footerfragment :: footer"></div>
+</html>

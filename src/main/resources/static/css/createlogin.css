@@ -1,0 +1,215 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  /* color scheme*/
+  :root {
+    --color1: #f4aaa4;
+    --color2: #ec9f80;
+    --color3: #c49792;
+    --color4: #a5092d;
+    --color5: #79aed3;
+    --color6: #31393b;
+    --color7: rgb(162, 159, 159);
+  }
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+  .navbar1 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .navbar1 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    background-color: white;
+  }
+  .navbar1 li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 1em;
+    padding: 0;
+  }
+  .navbar1 a {
+    padding: 0.5em 0.8em;
+    margin: 0.2em 0;
+    display: block;
+    color: var(--color6);
+    position: relative;
+    text-decoration: none;
+  }
+  .navbar1 a:before,
+  .navbar1 a:after {
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    content: "";
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    opacity: 0;
+  }
+  .navbar1 a:before {
+    left: 0;
+    top: 0;
+    border-left: 3px solid var(--color4);
+    border-top: 3px solid var(--color4);
+    -webkit-transform: translate(100%, 50%);
+    transform: translate(100%, 50%);
+  }
+  .navbar1 a:after {
+    right: 0;
+    bottom: 0;
+    border-right: 3px solid var(--color4);
+    border-bottom: 3px solid var(--color4);
+    -webkit-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+  }
+  .navbar1 a:hover,
+  .navbar1 .current a {
+    color: #0e0d0d;
+  }
+  .navbar1a:hover:before,
+  .navbar1 .current a:before,
+  .navbar1 a:hover:after,
+  .navbar1.current a:after {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+
+  /* Add styles to the form container */
+  .container {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+  }
+  .main-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:"left right";
+  }
+  .container1 {
+    grid-area: right;
+    position: static;
+    margin: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 75px;
+    background-color: white;
+  }
+  
+    
+    
+    /* Full-width input fields */
+  input[type="text"],
+  input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    box-sizing: border-box;
+    background-color: #ddd;
+    outline: none;
+  }
+  /* Set a style for the submit button */
+  .btn {
+    background-color: var(--color4);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  .btn {
+    opacity: 1;
+    box-shadow: #31393b;
+  }
+  .regbtn:hover {
+    background-color: var(--color4);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+    box-shadow: #31393b;
+  }
+
+  .ccbtn{
+    background-color: var(--color4);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    max-width: 50%;
+    opacity: 0.9;
+    box-shadow: #31393b;
+    display: inline-block;
+  }
+
+  body {
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 50vh;
+  }
+  header h1 {
+    color: var(--color4);
+    text-align: center;
+    margin: 0;
+  }
+  
+  h1{
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header{
+    display: flex;
+    justify-content: center;
+  }
+
+  .little{
+    font-size: x-small;
+  }
+  .footer {
+    color: var(--color6);
+    padding: 10px; /* Add some padding */
+    position: fixed; /* Fix the footer at the bottom of the page */
+    width: 100%; /* Full width */
+    bottom: 0;
+  }
+
+  .create-box{
+    display: flex;
+    position: static;
+    box-sizing: border-box;
+    margin: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    background-color: white;
+    
+  }
+  @media(max-width: 376px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        font-size: smaller;
+       
+    }
+  }

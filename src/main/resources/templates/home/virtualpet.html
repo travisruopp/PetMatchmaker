@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/virtualpetstyle.css}" >
+    <title>Virtual Pet</title>
+</head>
+<h1>
+    Virtual Pet Game
+</h1>
+<div class="leo_bg-img">
+    <nav class="menu-content">
+      <ul class="navbar1">
+        <li><a href="/">Home</a></li>
+          <li><a th:href="@{/quiz}">Quiz</a></li>
+          <li><a href="/resource">Resources</a></li>
+          <li><a href="/aboutus">About us</a></li>
+          <li><a href="/autologin">Auto Login</a></li>
+          <li><a href="/virtualpet">Virtual Pet</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  <br>
+<body>
+    <div id="nameInput">
+        <label id="enterText" for="petName">Enter your pet's name:</label>
+        <input type="text" id="petName">
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <br>
+    <div>
+        <img id="gifImage" src="./images/kiss.gif" alt="GIF Image">
+    </div>
+    </br>
+    <div id="gameContainer" style="display: none;">
+        <h2 id="petNameDisplay"></h2>
+        <h2 id="deathText" style="display: none;"> has died.</h2>
+        <div id="petStatus">
+            <p>Hunger: <span id="hunger">100</span></p>
+            <p>Thirst: <span id="thirst">100</span></p>
+            <p>Play: <span id="play">100</span></p>
+            <p>Health: <span id="health">100</span></p>
+        </div>
+        <button onclick="feedPet()">Feed</button>
+        <button onclick="playWithPet()">Play</button>
+        <button onclick="waterPet()">Water</button>
+        <button id="restartButton" onclick="restart()" style="display: none;">Restart</button>
+    </div>
+    <div id="counterContainer">
+        <p id="petNameDeathCounter" style="display: none;"></p>
+        <p id="counter" style="display: none;"></p>
+    </div>
+    <script src="./js/pets.js"></script>
+</body>
+<div th:replace="./fragments/footerfragment :: footer"></div>
+</html>

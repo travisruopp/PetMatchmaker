@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/ResourceStyle.css}" >
+    <title>Resource</title>
+</head>
+<body>
+    
+    <!-- <div th:replace="./fragments/headerfragment :: header"></div> -->
+    <!-- Commented out due to header tag being utilized -->
+<header>
+ 
+    
+    <div class="bg-img">
+        <h1>Pet Match Maker</h1>
+        <div class="container">
+        <nav class="menu-content">
+          <ul class="navbar1">
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/quiz}">Quiz</a></li>
+            <li><a href="/resource">Resources</a></li>
+            <li><a href="/aboutus">About us</a></li>
+            <li><a href="/autologin">Auto Login</a></li>
+            <li><a href="/virtualpet">Virtual Pet</a></li>
+          </ul>
+        </nav>
+      </div>
+</header>
+ 
+
+
+
+<!-- Paw joke lol -->
+<h2>Paw-esome Resources</h2>
+<div class="resource-shelter">
+    <div class="resource-item">
+        <a th:href="@{https://www.petfinder.com/}" target="_blank">
+            <img src="/Images/petfinder.png" alt="Petfinder">
+        </a>
+        <p>This link is to help find Adoptable Pets in your area! 
+            <br>Find your new best friend!
+            <br>Browse pets from our network of over 14,500 shelters and rescues.
+        </p>
+    </div>
+    <div class="resource-Care">
+        <a th:href="@{https://www.thesprucepets.com/}" target = "_blank"> <img src = "/Images/sprucepet.png" alt="Spruce Pets" ></a>
+        <p>The Spruce Pets offers practical, real-life tips and training 
+            <br>advice to help you care for your pet. We help over 10 million
+            <br>users each month find the information they need to provide the
+            <br>best possible life for their pets. 
+           
+    </div>
+    
+    <div class="resource-Care">
+        <a th:href="@{https://www.wikihow.com/Take-Care-of-Your-Pet/}" target ="_blank"> <img src = "\Images\wikihow.jpg" alt ="WikiHow"></a>
+        <p>Taking care of a pet is a big responsibility—but it can be a 
+            <br>little easier if you know exactly what you’re signing up for. 
+            <br>With the help of several dog and cat professionals, we’ll go 
+            <br>over the most essential aspects of caring for a new pet, 
+            <br>so you and your furry, scaly, or feathery friend can get 
+            <br>off to the best possible start. </p>
+    </div>
+    <div class="resource-Care">
+        <a th:href="@{https://www.hillspet.com/pet-care/routine-care/10-responsible-pet-care-tips?lightboxfired=true}" target="_blank">
+             <img src = "\Images\HillsLogo.webp" alt ="WikiHow"></a>
+             <p>10 Responsible Pet Care Tips
+                <br>As a pet parent you want to do everything you can 
+                <br>to care for your pet; this involves regular, everyday 
+                <br>activities to ensure they stay happy and healthy. Practice 
+                <br>these ten responsible pet care tips year after year for a 
+                <br>lifetime of happy and healthy cats and dogs.
+             </p>
+    </div>
+
+</body>
+
+<div th:replace="./fragments/footerfragment :: footer"></div>
+</html>
+
+

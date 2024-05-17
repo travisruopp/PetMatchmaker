@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/result.css}">
+  <title>Result</title>
+</head>
+
+<header>
+
+
+  <div class="bg-img">
+    <h1>Pet Match Maker</h1>
+    <div class="container">
+      <nav class="menu-content">
+        <ul class="navbar1">
+          <li><a href="/">Home</a></li>
+          <li><a th:href="@{/quiz}">Quiz</a></li>
+          <li><a href="/resource">Resources</a></li>
+          <li><a href="/aboutus">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
+
+
+<body>
+  
+    <img src="./images/KittyDanceParty.gif" id="gifImage" alt="GIF Image">
+  
+    <h3 id="hiddenText2"> Congratulations</h3>
+
+    <h2 id="hiddenText">Results!</h2>
+
+    <H3 id="hiddenText3">See Your Recommended Pets Below!</h3>
+ 
+
+      <table id="scoreboard">
+        <thead>
+            <tr>
+                <th></th> <!-- Blank header for the manually typed column -->
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="hidden-row">
+                <td><img src="./images/number1.png" class="number-img" alt="1"></td>
+                <br>
+                <td th:text="${scoreboard[0].petType}"></td>
+            </tr>
+            <tr class="hidden-row">
+                <td><img src="./images/number2.png" class="number-img" alt="1"></td>
+                <br>
+                <td th:text="${scoreboard[1].petType}"></td>
+            </tr>
+            <tr class="hidden-row">
+                <td><img src="./images/number3.png" class="number-img" alt="1"></td>
+                <br>
+                <td th:text="${scoreboard[2].petType}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+<script src="./js/results.js"></script>
+
+</html>

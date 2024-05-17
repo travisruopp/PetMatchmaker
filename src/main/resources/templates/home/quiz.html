@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/quiz.css}" />
+    <title>Quiz</title>
+</head>
+
+<div class="container">
+    <div class="bg-img">
+        <h1>
+            Pet Matchmaker Quiz
+        </h1>
+       
+            <nav class="navbar1">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a th:href="@{/quiz}">Quiz</a></li>
+                    <li><a href="/resource">Resources</a></li>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/autologin">Auto Login</a></li>
+                    <li><a href="/virtualpet">Virtual Pet</a></li>
+                </ul>
+            </nav>
+
+
+<body>
+            <table class="main-content">
+                <tr>
+                    <td>
+
+                        <form id="questionform" action="#" th:action="@{/question}" th:object="${question}"
+                            method="post">
+                            <input type="hidden" th:value="*{id}" />
+                            <table>
+                                <thead>
+                                    <tr>
+
+                                        <p th:text="${question.question}"></p>
+                                        <strong>
+                                            <div th:if="${question.manyAnswers}">
+                                            <h8>*Pick all that apply*</h8>
+                                            </div>
+                                            <div th:unless="${question.manyAnswers}">
+                                            <h8>*Pick ONE*</h8>
+                                            </div>
+                                        </strong>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="value, stat : ${question.answerDto}">
+                                        <td>
+                                            <input type="checkbox" th:checked="${value}"
+                                                th:field="${question.answerDto[__${stat.index}__].selected}">
+                                            <input type="hidden" th:value="${question.answerDto[__${stat.index}__].id}">
+                                        </td>
+                                        <td th:text="${value.answer}"></td>
+                                    </tr>
+
+                                   
+                                </div>
+                                </tbody>
+                            </table>
+                              <div class="button">
+                                    <td>
+                                        <button form="questionform" type="submit">Next</button>
+                                    </td>    
+                        </form>
+                       
+                    </td>
+                    <!-- <td>
+                <br> -->
+                    <!-- <table id="scoreboard">
+                    <tr th:each="score : ${scoreboard}">
+                        <td>
+                        <td th:text="${score.score}"></td>
+                        <td th:text="${score.petType}"></td>
+            </td> -->
+                </tr>
+            </table>
+            </td>
+            </tr>
+            </table>
+    </body>   
+    <div th:replace="./fragments/footerfragment :: footer"></div>
+ 
+</div>
+</html>

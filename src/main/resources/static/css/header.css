@@ -1,0 +1,120 @@
+/* Header CSS, copy and paste to utilize in a new page.  */
+
+
+* {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  /* color scheme*/
+  :root {
+    --color1: #f4aaa4;
+    --color2: #ec9f80;
+    --color3: #c49792;
+    --color4: #a5092d;
+    --color5: #79aed3;
+    --color6: #31393b;
+    --color7: rgb(162, 159, 159);
+  }
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+  .navbar1 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .navbar1 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  .navbar1 li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 1em;
+    padding: 0;
+  }
+  .navbar1 a {
+    padding: 0.5em 0.8em;
+    margin: 0.2em 0;
+    display: block;
+    color: var(--color6);
+    position: relative;
+    text-decoration: none;
+  }
+  .navbar1 a:before,
+  .navbar1 a:after {
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    content: "";
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    opacity: 0;
+  }
+  .navbar1 a:before {
+    left: 0;
+    top: 0;
+    border-left: 3px solid var(--color4);
+    border-top: 3px solid var(--color4);
+    -webkit-transform: translate(100%, 50%);
+    transform: translate(100%, 50%);
+  }
+  .navbar1 a:after {
+    right: 0;
+    bottom: 0;
+    border-right: 3px solid var(--color4);
+    border-bottom: 3px solid var(--color4);
+    -webkit-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+  }
+  .navbar1 a:hover,
+  .navbar1 .current a {
+    color: #0e0d0d;
+  }
+  .navbar1a:hover:before,
+  .navbar1 .current a:before,
+  .navbar1 a:hover:after,
+  .navbar1.current a:after {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  /* background image and login panel */
+  .bg-img {
+    background-image: url("/images/petpaws.jpeg");
+    background-size: contain;
+    /* Adjust height to make space for content below  */
+    height: 70vh;
+    width: 99vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  /* Add styles to the form container */
+  .container {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+  }
+
+  header h1 {
+    color: var(--color4);
+    text-align: center;
+    margin: 0;
+  }
+  
+  h1{
+    font-size: 4em;
+  }
+  @media(max-width: 376px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        font-size: smaller;
+       
+    }
+  }

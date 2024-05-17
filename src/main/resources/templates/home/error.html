@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/error.css}" >
+    <title>Resource</title>
+</head>
+<body>
+
+<header>
+ 
+
+    
+    <div class="bg-img">
+        <h1>Pet Match Maker</h1>
+        <div class="container">
+        <nav class="menu-content">
+          <ul class="navbar1">
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/quiz}">Quiz</a></li>
+            <li><a href="/resource">Resources</a></li>
+            <li><a href="/aboutus">About us</a></li>
+            <li><a href="/autologin">Auto Login</a></li>
+            <li><a href="/virtualpet">Virtual Pet</a></li>
+          </ul>
+        </nav>
+      </div>
+</header>
+<div class = "messageContainer">
+  <h1 th:text = "${message}"></h1>
+  <a class="homebtn" href="/"><button class="homebtn">Return Home</button></a> 
+    
+
+
+ </div>
+
+
+
+</body>
+
+<div th:replace="./fragments/footerfragment :: footer"></div>
+</html>
+
+
